@@ -602,6 +602,719 @@
       *,*::before,*::after { animation-duration:.01ms!important; animation-iteration-count:1!important; scroll-behavior:auto!important; transition-duration:.01ms!important; }
       .reveal { opacity:1; transform:none; }
     }
+  
+    /* =========================================================
+       COMPETITION EDITION — CLINICAL PREMIUM DESIGN LAYER
+       ========================================================= */
+    :root{
+      --navy:#08213f;
+      --navy-2:#0d2d51;
+      --navy-3:#123d69;
+      --teal:#0b9b91;
+      --teal-2:#16b8aa;
+      --teal-soft:#dff8f5;
+      --aqua:#6ee7df;
+      --gold:#d9a441;
+      --red:#e23d4d;
+      --ink:#14263d;
+      --muted:#68798d;
+      --soft:#f4f8fb;
+      --soft-2:#eef5f8;
+      --line:#dfe9ef;
+      --white:#fff;
+      --shadow-xs:0 8px 24px rgba(8,33,63,.07);
+      --shadow-sm:0 14px 36px rgba(8,33,63,.09);
+      --shadow-md:0 24px 60px rgba(8,33,63,.13);
+      --shadow-lg:0 38px 90px rgba(8,33,63,.19);
+      --ease:cubic-bezier(.2,.8,.2,1);
+    }
+
+    body{
+      background:#fff;
+      color:var(--ink);
+      font-feature-settings:"kern" 1,"liga" 1;
+    }
+
+    body::selection{background:var(--teal);color:#fff}
+    .container{max-width:1240px}
+    .section-pad{padding:112px 0}
+    .soft-section{
+      background:
+        radial-gradient(circle at 8% 10%, rgba(22,184,170,.07), transparent 25%),
+        linear-gradient(180deg,#f8fbfd 0%,#f2f7fa 100%);
+    }
+    .title-accent{color:var(--teal)}
+    .section-kicker{
+      display:inline-flex;
+      align-items:center;
+      gap:9px;
+      color:var(--teal);
+      background:rgba(11,155,145,.075);
+      border:1px solid rgba(11,155,145,.12);
+      padding:8px 12px;
+      border-radius:999px;
+      letter-spacing:.12em;
+      font-size:.71rem;
+      margin-bottom:18px;
+    }
+    .section-kicker::before{
+      content:"";
+      width:7px;height:7px;border-radius:50%;
+      background:var(--teal);
+      box-shadow:0 0 0 5px rgba(11,155,145,.10);
+    }
+    .section-title{
+      font-size:clamp(2.35rem,4.4vw,4.2rem);
+      line-height:1.03;
+      letter-spacing:-.045em;
+      max-width:900px;
+    }
+    .section-text{font-size:1rem;line-height:1.9}
+
+    /* alert + utility */
+    .emergency-banner{
+      background:linear-gradient(90deg,#c92d40,#e34a59);
+      min-height:42px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      box-shadow:0 8px 30px rgba(190,38,55,.18);
+      letter-spacing:.01em;
+    }
+    .emergency-banner a{
+      text-decoration:none;
+      border-bottom:1px solid rgba(255,255,255,.72);
+    }
+    .topbar{
+      background:#061a31;
+      padding:11px 0;
+      border-bottom:1px solid rgba(255,255,255,.07);
+    }
+    .topbar-item{font-size:.79rem;letter-spacing:.01em}
+    .topbar .bi{color:#75e4dc}
+
+    /* nav */
+    .navbar{
+      background:rgba(255,255,255,.93);
+      border-bottom:1px solid rgba(8,33,63,.065);
+      padding:14px 0;
+      box-shadow:0 1px 0 rgba(255,255,255,.4) inset;
+    }
+    .navbar.scrolled{
+      background:rgba(255,255,255,.985);
+      box-shadow:0 18px 45px rgba(8,33,63,.08);
+    }
+    .brand-logo{
+      height:58px;
+      border-radius:16px;
+      box-shadow:0 10px 30px rgba(8,33,63,.11);
+    }
+    .brand-name{font-size:1.22rem;letter-spacing:-.035em}
+    .brand-sub{font-size:.62rem;color:var(--teal);letter-spacing:.14em}
+    .nav-link{font-size:.84rem!important;font-weight:700!important;color:#223a55!important}
+    .nav-link::after{height:2px;bottom:0;background:linear-gradient(90deg,var(--teal),var(--teal-2))}
+    .nav-cta{
+      background:linear-gradient(135deg,var(--teal),#087c76)!important;
+      border-radius:999px!important;
+      padding:12px 20px!important;
+      box-shadow:0 12px 30px rgba(11,155,145,.24);
+    }
+    .nav-cta:hover{box-shadow:0 18px 38px rgba(11,155,145,.32)!important}
+
+    /* hero */
+    .hero{
+      min-height:790px;
+      isolation:isolate;
+      background:#071b33;
+    }
+    .hero::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      z-index:1;
+      background:
+        linear-gradient(90deg,rgba(5,22,42,.98) 0%,rgba(7,30,55,.90) 42%,rgba(8,33,63,.50) 70%,rgba(8,33,63,.25) 100%);
+    }
+    .hero::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      z-index:2;
+      pointer-events:none;
+      background:
+        radial-gradient(circle at 22% 28%,rgba(12,181,168,.20),transparent 26%),
+        linear-gradient(180deg,transparent 60%,rgba(3,15,29,.35));
+    }
+    .hero-overlay{background:none!important}
+    .hero-media img{
+      filter:saturate(.94) contrast(1.04);
+      object-position:center;
+    }
+    .hero-content{
+      padding:118px 0 155px;
+      max-width:1160px;
+    }
+    .hero-content::after{display:none}
+    .eyebrow{
+      background:rgba(255,255,255,.08);
+      border-color:rgba(255,255,255,.14);
+      color:#baf8f1;
+      padding:10px 15px;
+      font-size:.73rem;
+      box-shadow:inset 0 1px 0 rgba(255,255,255,.09);
+    }
+    .hero h1{
+      font-size:clamp(3.5rem,6.3vw,6.25rem);
+      line-height:.93;
+      max-width:840px;
+      margin:28px 0 24px;
+      letter-spacing:-.06em;
+      text-shadow:0 8px 30px rgba(0,0,0,.24);
+    }
+    .hero h1 .highlight{color:#86ede5}
+    .hero h1 .gold{color:#fff}
+    .hero-lead{
+      font-size:1.12rem;
+      max-width:650px;
+      color:rgba(255,255,255,.80);
+      line-height:1.9;
+      text-shadow:none;
+    }
+    .hero-proof{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:24px;
+    }
+    .hero-proof span{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      color:rgba(255,255,255,.82);
+      background:rgba(255,255,255,.07);
+      border:1px solid rgba(255,255,255,.11);
+      backdrop-filter:blur(10px);
+      padding:9px 13px;
+      border-radius:999px;
+      font-size:.74rem;
+      font-weight:650;
+    }
+    .hero-proof i{color:#75e4dc}
+    .hero-actions{margin-top:34px}
+    .btn-main,.btn-outline-light{
+      border-radius:999px;
+      min-height:54px;
+      padding:14px 24px;
+      font-size:.9rem;
+      letter-spacing:.005em;
+    }
+    .btn-main{
+      background:linear-gradient(135deg,#11afa3,#087c76);
+      border:none;
+      box-shadow:0 16px 36px rgba(11,155,145,.32);
+    }
+    .btn-main:hover{background:linear-gradient(135deg,#14bcae,#086d68);transform:translateY(-3px)}
+    .btn-outline-light{border-color:rgba(255,255,255,.28);background:rgba(255,255,255,.055)}
+    .hero-emergency-card{
+      position:absolute;
+      right:18px;
+      bottom:96px;
+      width:340px;
+      display:flex;
+      gap:16px;
+      align-items:center;
+      padding:18px 20px;
+      border-radius:22px;
+      background:rgba(255,255,255,.96);
+      color:var(--ink);
+      box-shadow:0 25px 70px rgba(0,0,0,.22);
+      border:1px solid rgba(255,255,255,.72);
+      backdrop-filter:blur(18px);
+    }
+    .hero-emergency-icon{
+      width:54px;height:54px;border-radius:17px;
+      display:grid;place-items:center;
+      background:#fff0f2;color:var(--red);
+      font-size:1.45rem;
+      box-shadow:inset 0 0 0 1px rgba(226,61,77,.10);
+      flex:0 0 auto;
+    }
+    .hero-emergency-card small{
+      display:block;color:var(--red);
+      letter-spacing:.13em;font-size:.61rem;font-weight:800;
+      margin-bottom:3px;
+    }
+    .hero-emergency-card strong{
+      display:block;font-family:"Outfit";font-size:.98rem;color:var(--navy);
+    }
+    .hero-emergency-card a{
+      display:inline-flex;align-items:center;gap:6px;
+      color:var(--teal);font-size:.77rem;font-weight:800;margin-top:3px;
+    }
+
+    /* trust strip */
+    .trust-strip{margin-top:-66px}
+    .trust-card{
+      border-radius:28px;
+      box-shadow:0 28px 72px rgba(8,33,63,.14);
+      padding:8px;
+      border:1px solid rgba(8,33,63,.065);
+      overflow:hidden;
+    }
+    .trust-item{
+      padding:22px 24px;
+      border-right:1px solid rgba(8,33,63,.075);
+      transition:.3s var(--ease);
+    }
+    .trust-item:hover{background:#f6fbfb;border-radius:20px}
+    .trust-item i{
+      width:46px;height:46px;display:grid;place-items:center;
+      border-radius:15px;background:var(--teal-soft);font-size:1.25rem;
+    }
+    .trust-item strong{font-size:.9rem}
+    .trust-item span{font-size:.73rem}
+
+    /* credibility */
+    .credibility-band{padding:42px 0 16px;background:#fff}
+    .credibility-grid{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:1px;
+      background:var(--line);
+      border:1px solid var(--line);
+      border-radius:24px;
+      overflow:hidden;
+    }
+    .credibility-item{
+      min-height:125px;
+      background:#fff;
+      padding:24px 22px;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      transition:.3s var(--ease);
+    }
+    .credibility-item:hover{background:#f8fcfc}
+    .credibility-number{
+      font-family:"Outfit";
+      font-size:1.55rem;
+      font-weight:800;
+      color:var(--navy);
+      margin-bottom:7px;
+    }
+    .credibility-number i{color:var(--teal)}
+    .credibility-label{font-size:.76rem;line-height:1.6;color:var(--muted);font-weight:600}
+
+    /* about */
+    #about{padding-top:96px}
+    .about-visual::before{
+      content:"";
+      position:absolute;
+      left:-28px;top:32px;
+      width:140px;height:140px;
+      border-radius:34px;
+      background:linear-gradient(145deg,rgba(11,155,145,.10),rgba(11,155,145,.02));
+      z-index:-1;
+      transform:rotate(-8deg);
+    }
+    .about-main-img{
+      height:585px;
+      border-radius:34px;
+      box-shadow:0 30px 70px rgba(8,33,63,.16);
+    }
+    .image-accent{
+      width:245px;
+      border:1px solid rgba(8,33,63,.06);
+      border-left:none;
+      border-radius:22px;
+      padding:22px;
+      bottom:28px;
+      right:-12px;
+      box-shadow:0 20px 54px rgba(8,33,63,.16);
+    }
+    .image-accent::before{
+      content:"";
+      width:5px;height:54px;
+      border-radius:99px;
+      background:linear-gradient(var(--teal),#5bd5cb);
+      position:absolute;left:0;top:50%;transform:translateY(-50%);
+    }
+    .about-points{gap:12px;margin-top:30px}
+    .point{
+      border-radius:18px;
+      padding:18px;
+      background:linear-gradient(180deg,#fff,#fbfdfe);
+      box-shadow:0 10px 28px rgba(8,33,63,.045);
+    }
+    .point i{
+      width:38px;height:38px;border-radius:12px;
+      display:grid;place-items:center;background:var(--teal-soft);font-size:1.05rem;
+      flex:0 0 auto;
+    }
+
+    /* patient focus */
+    .patient-focus{
+      padding:100px 0;
+      text-align:left;
+      background:
+        radial-gradient(circle at 82% 20%,rgba(76,222,210,.18),transparent 24%),
+        radial-gradient(circle at 10% 100%,rgba(18,112,176,.20),transparent 28%),
+        linear-gradient(135deg,#061a31,#0a2f52 65%,#0c4a62);
+    }
+    .patient-focus::before{
+      inset:auto -10% -90% auto;
+      width:620px;height:620px;
+      background:radial-gradient(circle,rgba(36,207,193,.10),transparent 65%);
+    }
+    .patient-focus-badge{
+      position:relative;z-index:2;
+      display:inline-flex;align-items:center;gap:8px;
+      padding:9px 13px;
+      border-radius:999px;
+      background:rgba(255,255,255,.08);
+      border:1px solid rgba(255,255,255,.12);
+      color:#9cf2ea;
+      font-size:.72rem;font-weight:750;
+      margin-bottom:18px;
+    }
+    .patient-focus h2{
+      max-width:850px;
+      text-align:left;
+      margin:0;
+      font-size:clamp(2.7rem,5.2vw,5rem);
+      letter-spacing:-.05em;
+      line-height:.98;
+    }
+    .patient-focus h2 span{color:#82e6dd}
+    .patient-focus p{
+      margin:24px 0 0;
+      max-width:700px;
+      text-align:left;
+      color:rgba(255,255,255,.72);
+      font-size:1rem;
+      line-height:1.85;
+    }
+    .patient-focus-grid{
+      position:relative;z-index:2;
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:14px;
+      margin-top:45px;
+    }
+    .patient-focus-card{
+      min-height:210px;
+      padding:26px;
+      border-radius:22px;
+      background:rgba(255,255,255,.065);
+      border:1px solid rgba(255,255,255,.10);
+      backdrop-filter:blur(12px);
+      transition:.35s var(--ease);
+    }
+    .patient-focus-card:hover{
+      transform:translateY(-6px);
+      background:rgba(255,255,255,.095);
+      border-color:rgba(125,239,229,.22);
+    }
+    .patient-focus-card>i{
+      width:48px;height:48px;border-radius:15px;
+      display:grid;place-items:center;
+      color:#8df0e7;background:rgba(104,234,223,.10);
+      font-size:1.25rem;margin-bottom:30px;
+    }
+    .patient-focus-card strong{
+      display:block;color:#fff;font-family:"Outfit";font-size:1.08rem;margin-bottom:8px;
+    }
+    .patient-focus-card span{color:rgba(255,255,255,.62);font-size:.82rem;line-height:1.7}
+
+    /* services */
+    .service-grid{gap:18px}
+    .service-card{
+      min-height:330px;
+      padding:28px;
+      border-radius:24px;
+      border:1px solid rgba(8,33,63,.075);
+      box-shadow:0 12px 34px rgba(8,33,63,.055);
+    }
+    .service-card:hover{
+      transform:translateY(-9px);
+      box-shadow:0 25px 58px rgba(8,33,63,.13);
+      border-color:rgba(11,155,145,.22);
+    }
+    .service-card::before{height:3px}
+    .service-icon{
+      width:58px;height:58px;
+      border-radius:17px;
+      margin-bottom:20px;
+      box-shadow:inset 0 0 0 1px rgba(11,155,145,.08);
+    }
+    .service-badge{
+      width:max-content;
+      margin-bottom:9px;
+      padding:5px 9px;
+      border-radius:999px;
+      background:#eff9f8;
+      color:#0a8279;
+      font-size:.63rem;
+      font-weight:800;
+      letter-spacing:.07em;
+      text-transform:uppercase;
+    }
+    .service-card h3{font-size:1.24rem}
+    .service-card p{font-size:.85rem;line-height:1.78}
+    .service-link{margin-top:auto;padding-top:20px;font-size:.72rem}
+
+    /* clinical confidence */
+    .confidence-section{
+      position:relative;
+      overflow:hidden;
+      background:#fff;
+    }
+    .confidence-section::before{
+      content:"";
+      position:absolute;
+      right:-180px;top:30px;
+      width:520px;height:520px;border-radius:50%;
+      background:radial-gradient(circle,rgba(11,155,145,.07),transparent 66%);
+    }
+    .confidence-grid{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:14px;
+    }
+    .confidence-card{
+      position:relative;
+      min-height:330px;
+      padding:28px 26px;
+      border-radius:24px;
+      border:1px solid rgba(8,33,63,.075);
+      background:linear-gradient(180deg,#fff 0%,#f9fcfd 100%);
+      box-shadow:0 12px 35px rgba(8,33,63,.055);
+      overflow:hidden;
+      transition:.35s var(--ease);
+    }
+    .confidence-card:hover{
+      transform:translateY(-8px);
+      box-shadow:0 24px 55px rgba(8,33,63,.12);
+    }
+    .confidence-index{
+      position:absolute;right:20px;top:17px;
+      font-family:"Outfit";font-size:2rem;font-weight:800;
+      color:rgba(8,33,63,.055);
+    }
+    .confidence-icon{
+      width:54px;height:54px;border-radius:17px;
+      display:grid;place-items:center;
+      background:linear-gradient(145deg,var(--teal-soft),#f3fffd);
+      color:var(--teal);
+      font-size:1.25rem;
+      margin-bottom:48px;
+    }
+    .confidence-card h3{font-size:1.18rem;margin-bottom:10px}
+    .confidence-card p{color:var(--muted);font-size:.82rem;line-height:1.78;margin:0}
+
+    /* gallery */
+    .gallery-grid{gap:12px}
+    .gallery-item{
+      border-radius:24px;
+      box-shadow:0 14px 36px rgba(8,33,63,.08);
+    }
+    .gallery-item::after{
+      content:"Wilies Hospital";
+      position:absolute;
+      left:16px;bottom:14px;
+      padding:7px 10px;
+      border-radius:999px;
+      color:#fff;
+      font-size:.64rem;
+      font-weight:700;
+      background:rgba(6,26,49,.72);
+      backdrop-filter:blur(10px);
+      opacity:0;
+      transform:translateY(8px);
+      transition:.3s var(--ease);
+    }
+    .gallery-item:hover::after{opacity:1;transform:none}
+
+    /* corporate */
+    .corporate-section{
+      position:relative;
+      overflow:hidden;
+      background:
+        radial-gradient(circle at 92% 16%,rgba(55,213,201,.13),transparent 26%),
+        linear-gradient(135deg,#061a31,#092947 65%,#0b3850);
+    }
+    .corporate-card{
+      border-radius:30px;
+      padding:42px;
+      background:rgba(255,255,255,.055);
+      border:1px solid rgba(255,255,255,.10);
+      box-shadow:0 30px 80px rgba(0,0,0,.14);
+    }
+    .client-tag{
+      padding:14px 15px;
+      border-radius:14px;
+      background:rgba(255,255,255,.055);
+      font-size:.78rem;
+    }
+    .client-tag:hover{background:rgba(26,189,175,.18);border-color:rgba(93,230,219,.28)}
+    .screening-box{border-radius:22px;background:rgba(0,0,0,.10)}
+
+    /* consultation */
+    .consult-card{
+      border-radius:34px;
+      border:1px solid rgba(8,33,63,.075);
+      box-shadow:0 30px 80px rgba(8,33,63,.13);
+    }
+    .consult-left{
+      position:relative;
+      overflow:hidden;
+      background:
+        radial-gradient(circle at 100% 0%,rgba(69,224,211,.18),transparent 35%),
+        linear-gradient(145deg,#061a31,#0a3557);
+    }
+    .consult-left::after{
+      content:"+";
+      position:absolute;right:-15px;bottom:-100px;
+      font-family:"Outfit";font-weight:300;font-size:20rem;
+      color:rgba(255,255,255,.025);
+      line-height:1;
+    }
+    .consult-right{background:#fff}
+    .form-control,.form-select{
+      min-height:54px;
+      background:#f7fafc;
+      border-color:#dfe8ef;
+      border-radius:13px;
+    }
+    .form-control:focus,.form-select:focus{
+      border-color:#42bdb3;
+      box-shadow:0 0 0 4px rgba(11,155,145,.09)!important;
+    }
+
+    /* faq */
+    .accordion-item{
+      border-radius:18px!important;
+      border:1px solid rgba(8,33,63,.075)!important;
+      box-shadow:0 8px 22px rgba(8,33,63,.045);
+    }
+    .accordion-button{
+      padding:23px 25px;
+      font-size:.95rem;
+    }
+    .accordion-button:not(.collapsed){
+      color:var(--teal);
+      background:#f5fbfa;
+    }
+
+    /* contact */
+    .contact-section{
+      background:
+        radial-gradient(circle at 10% 10%,rgba(11,155,145,.07),transparent 25%),
+        linear-gradient(180deg,#f5f9fb,#eef5f8);
+    }
+    .contact-card,.map-card{
+      border-radius:28px;
+      border:1px solid rgba(8,33,63,.075);
+      box-shadow:0 18px 48px rgba(8,33,63,.08);
+    }
+    .contact-icon{
+      width:48px;height:48px;border-radius:15px;
+      box-shadow:inset 0 0 0 1px rgba(11,155,145,.08);
+    }
+    .map-card{
+      background:
+        radial-gradient(circle at 60% 40%,rgba(11,155,145,.12),transparent 28%),
+        linear-gradient(145deg,#dfeef3,#f8fbfd);
+    }
+
+    /* footer */
+    footer{
+      background:
+        radial-gradient(circle at 85% 20%,rgba(21,172,160,.09),transparent 24%),
+        #041525;
+      padding-top:86px;
+    }
+    .footer-logo{height:62px;border-radius:15px}
+    .footer-link{font-size:.82rem}
+    .social{
+      width:46px;height:46px;
+      border-radius:14px;
+      border-color:rgba(255,255,255,.10);
+      background:rgba(255,255,255,.04);
+      color:#fff;
+    }
+
+    /* floating quick actions */
+    .wa-float{
+      width:60px;height:60px;
+      border:4px solid rgba(255,255,255,.85);
+      box-shadow:0 16px 38px rgba(37,211,102,.34);
+    }
+    .wa-float-label{
+      border-radius:999px;
+      padding:9px 14px;
+      font-size:.72rem;
+    }
+
+    /* reveal polish */
+    .reveal{
+      opacity:0;
+      transform:translateY(24px);
+      transition:opacity .72s var(--ease),transform .72s var(--ease);
+    }
+
+    /* responsive */
+    @media(max-width:1199.98px){
+      .hero-emergency-card{right:0;width:315px}
+      .confidence-grid{grid-template-columns:repeat(2,1fr)}
+    }
+    @media(max-width:991.98px){
+      .hero{min-height:760px}
+      .hero-content{padding:95px 0 145px}
+      .hero-emergency-card{display:none}
+      .credibility-grid{grid-template-columns:1fr 1fr}
+      .patient-focus-grid{grid-template-columns:1fr}
+      .confidence-grid{grid-template-columns:1fr 1fr}
+      .about-main-img{height:500px}
+    }
+    @media(max-width:767.98px){
+      .section-pad{padding:78px 0}
+      .hero{min-height:690px}
+      .hero-content{padding:78px 0 112px}
+      .hero h1{font-size:clamp(2.75rem,13vw,4.2rem);max-width:570px}
+      .hero-lead{font-size:.93rem}
+      .hero-proof{gap:7px}
+      .hero-proof span{font-size:.65rem;padding:8px 10px}
+      .credibility-band{padding-top:28px}
+      .credibility-grid{grid-template-columns:1fr 1fr;border-radius:18px}
+      .credibility-item{min-height:115px;padding:18px 16px}
+      .credibility-number{font-size:1.28rem}
+      .credibility-label{font-size:.68rem}
+      .patient-focus{padding:74px 0}
+      .patient-focus h2{font-size:2.7rem}
+      .patient-focus-card{min-height:190px}
+      .confidence-grid{grid-template-columns:1fr}
+      .confidence-card{min-height:260px}
+      .confidence-icon{margin-bottom:30px}
+      .about-main-img{height:390px}
+      .image-accent{width:205px;right:8px}
+      .trust-card{border-radius:20px}
+      .trust-item{padding:15px 10px}
+      .service-card{min-height:280px}
+      .corporate-card{padding:24px}
+    }
+    @media(max-width:440px){
+      .hero h1{font-size:2.55rem}
+      .credibility-grid{grid-template-columns:1fr}
+      .credibility-item{min-height:auto}
+      .section-title{font-size:2.25rem}
+      .patient-focus h2{font-size:2.45rem}
+    }
+
+    @media(prefers-reduced-motion:reduce){
+      *,*::before,*::after{scroll-behavior:auto!important;animation:none!important;transition:none!important}
+    }
+
   </style>
 </head>
 
@@ -639,7 +1352,7 @@
         </div>
       </a>
 
-      <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#siteNav">
+      <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#siteNav" aria-label="Open navigation">
         <i class="bi bi-list fs-2" style="color:var(--navy)"></i>
       </button>
 
@@ -666,15 +1379,28 @@
     <div class="hero-overlay"></div>
 
     <div class="container hero-content">
-      <span class="eyebrow"><span class="dot"></span> Premier Healthcare in Maseru</span>
-      <h1>We Love. <span class="highlight">We Care.</span><br><span class="gold">God Heals.</span></h1>
+      <span class="eyebrow"><span class="dot"></span> Private Healthcare · Maseru, Lesotho</span>
+      <h1>Care you can <span class="highlight">trust.</span><br><span class="gold">People you can rely on.</span></h1>
       <p class="hero-lead">
-        Becoming a premier healthcare facility that offers accessible, high-quality, and patient-centered clinical care to the community.
+        Accessible, patient-centred healthcare delivered with compassion, clinical attention and a commitment to the community.
       </p>
+      <div class="hero-proof">
+        <span><i class="bi bi-clock-history"></i> Established 2003</span>
+        <span><i class="bi bi-shield-check"></i> Medical Aids Accepted</span>
+        <span><i class="bi bi-heart-pulse"></i> Emergency Support</span>
+      </div>
 
       <div class="hero-actions">
         <a class="btn-main" href="#consult"><i class="bi bi-calendar2-check-fill"></i> Book Consultation</a>
         <a class="btn-outline-light" href="https://wa.me/26663782550?text=Hello%20Wilies%20Hospital%2C%20I%20would%20like%20to%20make%20an%20enquiry." target="_blank"><i class="bi bi-whatsapp"></i> WhatsApp Us</a>
+      </div>
+      <div class="hero-emergency-card">
+        <div class="hero-emergency-icon"><i class="bi bi-activity"></i></div>
+        <div>
+          <small>URGENT CARE</small>
+          <strong>24/7 Emergency Contact</strong>
+          <a href="tel:+26622333600">+266 2233 3600 <i class="bi bi-arrow-up-right"></i></a>
+        </div>
       </div>
     </div>
   </header>
@@ -703,6 +1429,29 @@
     </div>
   </div>
 
+  <section class="credibility-band" aria-label="Hospital highlights">
+    <div class="container">
+      <div class="credibility-grid reveal">
+        <div class="credibility-item">
+          <span class="credibility-number">2003</span>
+          <span class="credibility-label">Established in Maseru</span>
+        </div>
+        <div class="credibility-item">
+          <span class="credibility-number"><i class="bi bi-award-fill"></i></span>
+          <span class="credibility-label">PMR Africa recognition for health delivery</span>
+        </div>
+        <div class="credibility-item">
+          <span class="credibility-number"><i class="bi bi-truck-front-fill"></i></span>
+          <span class="credibility-label">Ambulance support for emergency conveyance</span>
+        </div>
+        <div class="credibility-item">
+          <span class="credibility-number"><i class="bi bi-person-hearts"></i></span>
+          <span class="credibility-label">Resident, relief & visiting clinical professionals</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ABOUT -->
   <section class="section-pad" id="about">
     <div class="container">
@@ -719,7 +1468,7 @@
 
         <div class="col-lg-6 reveal">
           <span class="section-kicker">About Wilies Hospital</span>
-          <h2 class="section-title">Care that feels personal.</h2>
+          <h2 class="section-title">Healthcare rooted in <span class="title-accent">care, trust and community.</span></h2>
           <p class="section-text">
             Wilies Hospital is a private institution located in Khubetsoana, Bochabela II, Maseru, Lesotho, established in 2003. 
             We provide comprehensive healthcare delivery services to local, governmental, non-governmental, and international people.
@@ -755,9 +1504,28 @@
 
   <!-- PATIENT FOCUS -->
   <section class="patient-focus reveal">
-    <div class="container">
-      <h2>Your health. Our priority.</h2>
-      <p>We are dedicated to providing a welcoming, safe, and healing environment for every patient who walks through our doors.</p>
+    <div class="container position-relative">
+      <div class="patient-focus-badge"><i class="bi bi-heart-pulse-fill"></i> Patient-first care</div>
+      <h2>More than treatment.<br><span>Care that stays human.</span></h2>
+      <p>We are dedicated to providing a welcoming, safe and healing environment for every patient who walks through our doors.</p>
+
+      <div class="patient-focus-grid">
+        <div class="patient-focus-card">
+          <i class="bi bi-hospital"></i>
+          <strong>Inpatient Care</strong>
+          <span>Dedicated ward accommodation for patients who need continued clinical care.</span>
+        </div>
+        <div class="patient-focus-card">
+          <i class="bi bi-lightning-charge-fill"></i>
+          <strong>Emergency Support</strong>
+          <span>Casualty services, ambulance support and urgent contact when care cannot wait.</span>
+        </div>
+        <div class="patient-focus-card">
+          <i class="bi bi-person-badge-fill"></i>
+          <strong>Clinical Team</strong>
+          <span>Resident doctors, relief doctors and visiting specialists supporting patient care.</span>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -767,7 +1535,7 @@
       <div class="services-head reveal">
         <div>
           <span class="section-kicker">Our Services</span>
-          <h2 class="section-title mb-0">Healthcare services<br>made easier to find.</h2>
+          <h2 class="section-title mb-0">The care you need,<br><span class="title-accent">under one roof.</span></h2>
         </div>
         <p class="section-text mb-0">
           Explore key services associated with Wilies Hospital. Please contact the hospital to confirm current availability, fees and service hours before your visit.
@@ -777,13 +1545,15 @@
       <div class="service-grid">
         <article class="service-card reveal">
           <div class="service-icon"><i class="bi bi-hospital-fill"></i></div>
+          <span class="service-badge">Core Care</span>
           <h3>Inpatient & Outpatient</h3>
-          <p>Comprehensive care with 10 beds for inpatient hospitalization, well-equipped theatres, and general medical examinations.</p>
-          <a class="service-link" href="#consult">Make an enquiry <i class="bi bi-arrow-right"></i></a>
+          <p>Comprehensive inpatient and outpatient care with dedicated ward accommodation, well-equipped theatre services, and general medical examinations.</p>
+          <a class="service-link" href="#consult">Ask about care <i class="bi bi-arrow-right"></i></a>
         </article>
 
         <article class="service-card reveal">
           <div class="service-icon"><i class="bi bi-people-fill"></i></div>
+          <span class="service-badge">Family Care</span>
           <h3>Maternity Services</h3>
           <p>Dedicated maternity care and support for mothers and families in a safe, welcoming environment.</p>
           <a class="service-link" href="#contact">Ask about maternity <i class="bi bi-arrow-right"></i></a>
@@ -791,13 +1561,15 @@
 
         <article class="service-card reveal">
           <div class="service-icon"><i class="bi bi-lightning-charge-fill"></i></div>
+          <span class="service-badge">Urgent Care</span>
           <h3>Casualty & Emergency</h3>
           <p>Urgent health concerns attended to promptly with emergency conveyance and evacuation available.</p>
-          <a class="service-link" href="tel:+26622333600">Call hospital <i class="bi bi-arrow-right"></i></a>
+          <a class="service-link" href="tel:+26622333600">Emergency call <i class="bi bi-arrow-right"></i></a>
         </article>
 
         <article class="service-card reveal">
           <div class="service-icon"><i class="bi bi-droplet-half"></i></div>
+          <span class="service-badge">Diagnostics</span>
           <h3>Laboratory & Diagnostics</h3>
           <p>Basic laboratory, Chest X-rays, Lung function tests, Audiometry, and X-ray machines for accurate assessments.</p>
           <a class="service-link" href="#contact">Get information <i class="bi bi-arrow-right"></i></a>
@@ -805,6 +1577,7 @@
 
         <article class="service-card reveal">
           <div class="service-icon"><i class="bi bi-heart-pulse-fill"></i></div>
+          <span class="service-badge">Assessments</span>
           <h3>General Medical Exams</h3>
           <p>Pre-employment, six-monthly periodic, exit employment, disability, and compensation assessments.</p>
           <a class="service-link" href="#contact">Contact us <i class="bi bi-arrow-right"></i></a>
@@ -812,9 +1585,52 @@
 
         <article class="service-card reveal">
           <div class="service-icon"><i class="bi bi-capsule-pill"></i></div>
+          <span class="service-badge">Medication Support</span>
           <h3>Pharmacy</h3>
           <p>Convenient access to pharmacy services associated with the hospital. Ask about medicines and availability.</p>
           <a class="service-link" href="#contact">Contact us <i class="bi bi-arrow-right"></i></a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- CLINICAL CONFIDENCE -->
+  <section class="section-pad confidence-section">
+    <div class="container">
+      <div class="row g-5 align-items-end mb-5">
+        <div class="col-lg-7 reveal">
+          <span class="section-kicker">Why Wilies Hospital</span>
+          <h2 class="section-title mb-0">Built around the things that matter <span class="title-accent">when health matters most.</span></h2>
+        </div>
+        <div class="col-lg-5 reveal">
+          <p class="section-text mb-0">From everyday consultations to emergency support and occupational health, our focus remains clear: accessible care, attentive professionals and a dependable clinical environment.</p>
+        </div>
+      </div>
+
+      <div class="confidence-grid">
+        <article class="confidence-card reveal">
+          <span class="confidence-index">01</span>
+          <div class="confidence-icon"><i class="bi bi-people-fill"></i></div>
+          <h3>Attentive patient care</h3>
+          <p>A patient-centred approach supported by the hospital's stated 1:2 nurse-patient ratio.</p>
+        </article>
+        <article class="confidence-card reveal">
+          <span class="confidence-index">02</span>
+          <div class="confidence-icon"><i class="bi bi-heart-pulse-fill"></i></div>
+          <h3>Specialist support</h3>
+          <p>Resident, relief and visiting doctors with on-call Anaesthetist and Orthopaedic support.</p>
+        </article>
+        <article class="confidence-card reveal">
+          <span class="confidence-index">03</span>
+          <div class="confidence-icon"><i class="bi bi-truck-front-fill"></i></div>
+          <h3>Emergency readiness</h3>
+          <p>Casualty care and equipped ambulances for emergency conveyance and evacuation.</p>
+        </article>
+        <article class="confidence-card reveal">
+          <span class="confidence-index">04</span>
+          <div class="confidence-icon"><i class="bi bi-briefcase-medical-fill"></i></div>
+          <h3>Corporate health</h3>
+          <p>Occupational health, employment medical examinations and screening services for organisations.</p>
         </article>
       </div>
     </div>
@@ -897,7 +1713,7 @@
           <span class="section-kicker">Need help?</span>
           <h2 class="section-title">Talk to Wilies Hospital.</h2>
           <p style="color:rgba(255,255,255,0.7); line-height:1.7; font-size:0.95rem">
-            Send a quick enquiry and we will prepare it for WhatsApp. No database is required — the form simply opens WhatsApp with your message ready to send.
+            Send a quick enquiry and continue securely on WhatsApp with your details already prepared for the hospital team.
           </p>
           <ul class="consult-list">
             <li><i class="bi bi-check-circle-fill"></i><span>Ask about services and availability.</span></li>
@@ -985,7 +1801,7 @@
           <div class="accordion-item">
             <h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5">What services are available at the hospital?</button></h3>
             <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-              <div class="accordion-body">We offer Out-patient, Inpatient (10 beds), Maternity, all categories of surgery, well-equipped theatre, Occupational Health, Chest X-rays, Lung function tests, Audiometry, Basic laboratory, and general medical examinations (pre-employment, periodic, exit, disability, compensation).</div>
+              <div class="accordion-body">We offer outpatient and inpatient care with dedicated ward accommodation, maternity services, surgery and theatre services, occupational health, Chest X-rays, Lung function tests, Audiometry, Basic laboratory services, and general medical examinations (pre-employment, periodic, exit, disability, compensation).</div>
             </div>
           </div>
           <div class="accordion-item">
