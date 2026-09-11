@@ -33,6 +33,7 @@
       --shadow-md: 0 10px 25px -3px rgba(10, 30, 58, 0.08);
       --shadow-lg: 0 25px 50px -12px rgba(10, 30, 58, 0.15);
       --shadow-xl: 0 35px 60px -15px rgba(10, 30, 58, 0.25);
+      --radius: 20px;
     }
 
     html { scroll-behavior: smooth; scroll-padding-top: 100px; }
@@ -55,12 +56,31 @@
     a { text-decoration: none; transition: all 0.3s ease; }
     .container { max-width: 1200px; }
 
+    /* ---------- EMERGENCY BANNER ---------- */
+    .emergency-banner {
+      background: #DC2626;
+      color: #fff;
+      text-align: center;
+      padding: 10px 0;
+      font-size: 0.9rem;
+      font-weight: 600;
+      position: relative;
+      z-index: 1031;
+    }
+    .emergency-banner a {
+      color: #fff;
+      text-decoration: underline;
+      font-weight: 800;
+      margin-left: 5px;
+    }
+    .emergency-banner i { margin-right: 8px; }
+
     /* ---------- TOP BAR ---------- */
     .topbar { 
       background: var(--navy); 
       color: rgba(255,255,255,0.85); 
       font-size: 0.85rem; 
-      padding: 12px 0;
+      padding: 10px 0;
       border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     }
     .topbar a { color: rgba(255,255,255,0.95); font-weight: 500; }
@@ -148,10 +168,10 @@
     .nav-cta:after { display: none; }
     .nav-cta:hover { background: var(--teal); transform: translateY(-2px); box-shadow: 0 8px 25px rgba(13, 148, 136, 0.3); }
 
-    /* ---------- HERO (BRIGHTER & CLEARER) ---------- */
+    /* ---------- HERO ---------- */
     .hero { 
       position: relative; 
-      min-height: 88vh; 
+      min-height: 85vh; 
       display: flex; 
       align-items: center; 
       overflow: hidden; 
@@ -159,12 +179,10 @@
     }
     .hero-media { position: absolute; inset: 0; }
     .hero-media img { width: 100%; height: 100%; object-fit: cover; object-position: center; }
-    
-    /* Lightened overlay so the hospital is visible */
     .hero-overlay { 
       position: absolute; 
       inset: 0; 
-      background: linear-gradient(100deg, rgba(10, 30, 58, 0.90) 0%, rgba(10, 30, 58, 0.65) 45%, rgba(13, 148, 136, 0.15) 100%); 
+      background: linear-gradient(100deg, rgba(10, 30, 58, 0.92) 0%, rgba(10, 30, 58, 0.70) 45%, rgba(13, 148, 136, 0.15) 100%); 
     }
     .hero-content { position: relative; z-index: 2; color: #fff; padding: 100px 0; }
     
@@ -186,7 +204,7 @@
     .eyebrow .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--teal); box-shadow: 0 0 0 4px rgba(13, 148, 136, 0.3); animation: pulse 2s infinite; }
     
     .hero h1 { 
-      font-size: clamp(3rem, 6vw, 5.5rem); 
+      font-size: clamp(2.8rem, 6vw, 5.5rem); 
       line-height: 1; 
       letter-spacing: -0.04em; 
       max-width: 800px; 
@@ -231,42 +249,6 @@
       backdrop-filter: blur(5px);
     }
     .btn-outline-light:hover { background: #fff; color: var(--navy); transform: translateY(-3px); }
-
-    /* Hidden on mobile to save space and avoid overlap */
-    .hero-floating { 
-      position: absolute; 
-      right: 5%; 
-      bottom: 50px; 
-      z-index: 3; 
-      width: 320px; 
-      padding: 25px; 
-      border-radius: 24px; 
-      background: rgba(255, 255, 255, 0.95); 
-      backdrop-filter: blur(20px);
-      box-shadow: var(--shadow-xl); 
-      border: 1px solid rgba(255,255,255,0.5);
-    }
-    .hero-floating-top { display: flex; align-items: center; gap: 15px; }
-    .status-icon { 
-      width: 50px; height: 50px; border-radius: 16px; 
-      background: var(--teal-light); color: var(--teal); 
-      display: grid; place-items: center; font-size: 1.4rem; 
-    }
-    .hero-floating strong { font-size: 1rem; color: var(--navy); display: block; }
-    .hero-floating small { display: block; color: var(--muted); margin-top: 3px; font-size: 0.85rem; }
-    .open-pill { 
-      display: inline-flex; align-items: center; gap: 8px; 
-      margin-top: 18px; padding: 8px 14px; border-radius: 50px; 
-      background: #F0FDF4; color: #166534; 
-      font-size: 0.8rem; font-weight: 600; 
-    }
-    .open-pill span { width: 8px; height: 8px; background: #22C55E; border-radius: 50%; animation: pulse 2s infinite; }
-
-    @keyframes pulse {
-      0% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.4); }
-      70% { box-shadow: 0 0 0 10px rgba(34, 197, 94, 0); }
-      100% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); }
-    }
 
     /* ---------- TRUST STRIP ---------- */
     .trust-strip { position: relative; z-index: 5; margin-top: -50px; }
@@ -356,24 +338,34 @@
     .point strong { font-size: 0.95rem; display: block; color: var(--navy); }
     .point span { font-size: 0.85rem; color: var(--muted); display: block; margin-top: 5px; line-height: 1.5; }
 
-    /* ---------- MEDICAL AIDS BANNER ---------- */
-    .med-aid-banner { 
-      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%); 
-      color: #fff; 
-      border-radius: 24px; 
-      padding: 35px 40px; 
-      text-align: center; 
-      margin-top: 20px;
-      box-shadow: var(--shadow-lg);
+    /* ---------- PATIENT FOCUS ---------- */
+    .patient-focus {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+      color: #fff;
+      text-align: center;
+      padding: 80px 0;
       position: relative;
       overflow: hidden;
     }
-    .med-aid-banner:before {
+    .patient-focus:before {
       content: ""; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%;
       background: radial-gradient(circle, rgba(13,148,136,0.2) 0%, transparent 60%);
     }
-    .med-aid-banner h4 { margin: 0; font-size: 1.4rem; font-weight: 700; color: #fff; position: relative; z-index: 1; }
-    .med-aid-banner p { margin: 8px 0 0; color: rgba(255,255,255,0.8); font-size: 1rem; position: relative; z-index: 1; }
+    .patient-focus h2 {
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      color: #fff;
+      position: relative;
+      z-index: 1;
+      margin-bottom: 20px;
+    }
+    .patient-focus p {
+      color: rgba(255,255,255,0.8);
+      font-size: 1.2rem;
+      max-width: 700px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
 
     /* ---------- SERVICES ---------- */
     .services-head { display: flex; align-items: flex-end; justify-content: space-between; gap: 30px; margin-bottom: 50px; }
@@ -422,6 +414,25 @@
       text-transform: uppercase; letter-spacing: 0.05em;
     }
     .service-link:hover { color: var(--teal); gap: 12px; }
+
+    /* ---------- GALLERY ---------- */
+    .gallery-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; }
+    .gallery-item { 
+      border-radius: 20px; 
+      overflow: hidden; 
+      height: 250px; 
+      position: relative;
+      box-shadow: var(--shadow-sm);
+    }
+    .gallery-item img { 
+      width: 100%; height: 100%; object-fit: cover; 
+      transition: transform 0.5s ease; 
+    }
+    .gallery-item:hover img { transform: scale(1.1); }
+    .gallery-item:nth-child(1) { grid-column: span 2; grid-row: span 2; height: 100%; min-height: 515px; }
+    .gallery-item:nth-child(2) { grid-column: span 2; }
+    .gallery-item:nth-child(3) { grid-column: span 1; }
+    .gallery-item:nth-child(4) { grid-column: span 1; }
 
     /* ---------- CORPORATE SECTION ---------- */
     .corporate-section { background: var(--navy); color: #fff; }
@@ -614,7 +625,6 @@
     @media(max-width: 991.98px) {
       .navbar .nav-cta { display: inline-flex; margin-top: 10px; width: 100%; justify-content: center; }
       .hero { min-height: 700px; }
-      .hero-floating { display: none; } /* Hide on tablet/mobile to avoid clutter */
       .trust-card { grid-template-columns: 1fr 1fr; }
       .trust-item:nth-child(2) { border-right: 0; }
       .trust-item:nth-child(-n+2) { border-bottom: 1px solid var(--line); }
@@ -624,11 +634,15 @@
       .service-grid { grid-template-columns: repeat(2, 1fr); }
       .contact-grid { grid-template-columns: 1fr; }
       .map-card { min-height: 400px; }
+      .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+      .gallery-item:nth-child(1) { grid-column: span 2; grid-row: span 1; min-height: 250px; }
+      .gallery-item:nth-child(2) { grid-column: span 2; }
+      .gallery-item:nth-child(3) { grid-column: span 1; }
+      .gallery-item:nth-child(4) { grid-column: span 1; }
     }
 
     @media(max-width: 767.98px) {
       body { padding-bottom: 90px; }
-      /* Topbar mobile fixes - hide extra numbers */
       .topbar .container { justify-content: center !important; flex-wrap: wrap; gap: 10px; }
       .topbar-item { margin: 0 5px; font-size: 0.75rem; }
       .topbar-item.optional { display: none; }
@@ -636,7 +650,6 @@
       .brand-logo { height: 45px; }
       .brand-name { font-size: 1rem; }
       
-      /* Hero mobile fixes */
       .hero h1 { font-size: 2.8rem; }
       .hero-lead { font-size: 1rem; }
       .hero-actions { flex-direction: column; }
@@ -670,11 +683,18 @@
       .mobile-bar { display: flex; }
       .corporate-card { padding: 25px; }
       .screening-box { padding: 25px; }
+      .gallery-grid { grid-template-columns: 1fr; }
+      .gallery-item { grid-column: span 1 !important; height: 200px; }
     }
   </style>
 </head>
 
 <body>
+
+  <!-- EMERGENCY BANNER -->
+  <div class="emergency-banner">
+    <i class="bi bi-exclamation-triangle-fill"></i> 24/7 Emergency: <a href="tel:+26622333600">+266 2233 3600</a>
+  </div>
 
   <!-- TOP BAR -->
   <div class="topbar">
@@ -712,6 +732,7 @@
           <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
           <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
           <li class="nav-item"><a class="nav-link" href="#corporate">Corporate</a></li>
+          <li class="nav-item"><a class="nav-link" href="#gallery">Gallery</a></li>
           <li class="nav-item"><a class="nav-link" href="#faqs">FAQs</a></li>
           <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
           <li class="nav-item ms-lg-3"><a class="nav-link nav-cta" href="#consult"><i class="bi bi-chat-dots-fill me-2"></i>Consult With Us</a></li>
@@ -735,7 +756,7 @@
       </p>
 
       <div class="hero-actions">
-        <a class="btn-main" href="#consult"><i class="bi bi-calendar2-check-fill"></i> Request a Consultation</a>
+        <a class="btn-main" href="#consult"><i class="bi bi-calendar2-check-fill"></i> Book Consultation</a>
         <a class="btn-outline-light" href="https://wa.me/26663782550?text=Hello%20Wilies%20Hospital%2C%20I%20would%20like%20to%20make%20an%20enquiry." target="_blank"><i class="bi bi-whatsapp"></i> WhatsApp Us</a>
       </div>
     </div>
@@ -815,13 +836,13 @@
     </div>
   </section>
 
-  <!-- MEDICAL AIDS BANNER -->
-  <div class="container reveal">
-    <div class="med-aid-banner">
-      <h4><i class="bi bi-shield-check me-2"></i> We Accept All Medical Aids</h4>
-      <p>Including Medical Aids from South Africa. Your health is our priority, regardless of your provider.</p>
+  <!-- PATIENT FOCUS -->
+  <section class="patient-focus reveal">
+    <div class="container">
+      <h2>Your health. Our priority.</h2>
+      <p>We are dedicated to providing a welcoming, safe, and healing environment for every patient who walks through our doors.</p>
     </div>
-  </div>
+  </section>
 
   <!-- SERVICES -->
   <section class="section-pad soft-section" id="services">
@@ -878,6 +899,23 @@
           <p>Convenient access to pharmacy services associated with the hospital. Ask about medicines and availability.</p>
           <a class="service-link" href="#contact">Contact us <i class="bi bi-arrow-right"></i></a>
         </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="section-pad" id="gallery">
+    <div class="container">
+      <div class="text-center reveal mb-5">
+        <span class="section-kicker">Our Environment</span>
+        <h2 class="section-title">A place of healing.</h2>
+        <p class="section-text mx-auto" style="max-width:650px">Take a look at our facilities and the environment we have created for our patients.</p>
+      </div>
+      <div class="gallery-grid reveal">
+        <div class="gallery-item"><img src="2.PNG" alt="Wilies Hospital Building"></div>
+        <div class="gallery-item"><img src="1.PNG" alt="Wilies Hospital Environment"></div>
+        <div class="gallery-item"><img src="2.PNG" alt="Wilies Hospital Facility"></div>
+        <div class="gallery-item"><img src="1.PNG" alt="Wilies Hospital Care"></div>
       </div>
     </div>
   </section>
@@ -1117,6 +1155,7 @@
           <a class="footer-link" href="#about">About Us</a>
           <a class="footer-link" href="#services">Services</a>
           <a class="footer-link" href="#corporate">Corporate Health</a>
+          <a class="footer-link" href="#gallery">Gallery</a>
           <a class="footer-link" href="#faqs">FAQs</a>
           <a class="footer-link" href="#contact">Contact</a>
         </div>
