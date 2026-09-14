@@ -32,7 +32,6 @@
       --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
       --shadow-md: 0 10px 25px -3px rgba(10, 30, 58, 0.08);
       --shadow-lg: 0 25px 50px -12px rgba(10, 30, 58, 0.15);
-      --shadow-xl: 0 35px 60px -15px rgba(10, 30, 58, 0.25);
     }
 
     html { scroll-behavior: smooth; scroll-padding-top: 100px; }
@@ -318,34 +317,22 @@
     .point strong { font-size: 0.95rem; display: block; color: var(--navy); }
     .point span { font-size: 0.85rem; color: var(--muted); display: block; margin-top: 5px; line-height: 1.5; }
 
-    /* ---------- PATIENT FOCUS ---------- */
-    .patient-focus {
-      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
-      color: #fff;
-      text-align: center;
-      padding: 80px 0;
-      position: relative;
-      overflow: hidden;
+    /* ---------- RECOGNITION / AWARD SECTION ---------- */
+    .recognition-section { background: var(--navy); color: #fff; }
+    .recognition-section .section-title { color: #fff; }
+    .recognition-section .section-text { color: rgba(255,255,255,0.7); }
+    .recognition-section .section-kicker { color: var(--gold-light); }
+    
+    .award-card { 
+      background: rgba(255,255,255,0.03); 
+      border: 1px solid rgba(255,255,255,0.1); 
+      border-radius: 30px; 
+      padding: 45px; 
+      backdrop-filter: blur(10px);
     }
-    .patient-focus:before {
-      content: ""; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%;
-      background: radial-gradient(circle, rgba(13,148,136,0.2) 0%, transparent 60%);
-    }
-    .patient-focus h2 {
-      font-size: clamp(2rem, 5vw, 3.5rem);
-      color: #fff;
-      position: relative;
-      z-index: 1;
-      margin-bottom: 20px;
-    }
-    .patient-focus p {
-      color: rgba(255,255,255,0.8);
-      font-size: 1.2rem;
-      max-width: 700px;
-      margin: 0 auto;
-      position: relative;
-      z-index: 1;
-    }
+    .award-img-main { width: 100%; height: 420px; object-fit: cover; border-radius: 24px; box-shadow: var(--shadow-lg); }
+    .award-img-side { width: 100%; height: 200px; object-fit: cover; border-radius: 24px; box-shadow: var(--shadow-lg); }
+    .award-text { font-size: 0.95rem; line-height: 1.8; color: rgba(255,255,255,0.8); }
 
     /* ---------- SERVICES ---------- */
     .services-head { display: flex; align-items: flex-end; justify-content: space-between; gap: 30px; margin-bottom: 50px; }
@@ -602,13 +589,12 @@
     .reveal.show { opacity: 1; transform: none; }
 
     /* =========================================================
-       TRUE RESPONSIVE OVERRIDES (MOBILE & TABLET)
+       RESPONSIVE OVERRIDES (MOBILE & TABLET)
        ========================================================= */
 
     @media(max-width: 991.98px) {
       .navbar .nav-cta { display: inline-flex; margin-top: 10px; width: 100%; justify-content: center; }
       .hero { min-height: 700px; }
-      .hero-floating { display: none; } /* Remove floating card on tablets/mobile */
       .trust-card { grid-template-columns: 1fr 1fr; }
       .trust-item:nth-child(2) { border-right: 0; }
       .trust-item:nth-child(-n+2) { border-bottom: 1px solid var(--line); }
@@ -623,6 +609,7 @@
       .gallery-item:nth-child(2) { grid-column: span 2; }
       .gallery-item:nth-child(3) { grid-column: span 1; }
       .gallery-item:nth-child(4) { grid-column: span 1; }
+      .award-img-main { height: 350px; }
     }
 
     @media(max-width: 767.98px) {
@@ -669,6 +656,9 @@
       .screening-box { padding: 25px; }
       .gallery-grid { grid-template-columns: 1fr; }
       .gallery-item { grid-column: span 1 !important; height: 220px; }
+      .award-img-main { height: 280px; }
+      .award-img-side { height: 180px; }
+      .award-card { padding: 25px; }
     }
 
     @media(max-width: 430px) {
@@ -720,6 +710,7 @@
           <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
           <li class="nav-item"><a class="nav-link" href="#corporate">Corporate</a></li>
           <li class="nav-item"><a class="nav-link" href="#gallery">Gallery</a></li>
+          <li class="nav-item"><a class="nav-link" href="#recognition">Awards</a></li>
           <li class="nav-item"><a class="nav-link" href="#faqs">FAQs</a></li>
           <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
           <li class="nav-item ms-lg-3"><a class="nav-link nav-cta" href="#consult"><i class="bi bi-chat-dots-fill me-2"></i>Consult With Us</a></li>
@@ -731,7 +722,7 @@
   <!-- HERO -->
   <header class="hero" id="home">
     <div class="hero-media">
-      <img src="2.PNG" alt="Wilies Hospital building">
+      <img src="2.JPEG" alt="Wilies Hospital building">
     </div>
     <div class="hero-overlay"></div>
 
@@ -779,7 +770,7 @@
       <div class="row align-items-center g-5">
         <div class="col-lg-6 reveal">
           <div class="about-visual">
-            <img class="about-main-img" src="2.PNG" alt="Wilies Hospital exterior">
+            <img class="about-main-img" src="2.JPEG" alt="Wilies Hospital exterior">
             <div class="image-accent">
               <div class="big">Est. 2003</div>
               <p>Over two decades of trusted healthcare in Lesotho.</p>
@@ -817,6 +808,41 @@
               <i class="bi bi-heart-pulse-fill"></i>
               <div><strong>On-call Specialists</strong><span>Resident Anaesthetist and Orthopaedic available 24/7.</span></div>
             </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RECOGNITION & EXCELLENCE -->
+  <section class="section-pad recognition-section" id="recognition">
+    <div class="container">
+      <div class="text-center reveal mb-5">
+        <span class="section-kicker">Recognition & Excellence</span>
+        <h2 class="section-title">PMR Africa Diamond Arrow 2025</h2>
+        <p class="section-text mx-auto" style="max-width:750px">
+          Wilies Hospital is honoured to receive the PMR Africa Diamond Arrow 2025 in the Kingdom of Lesotho Survey, rated Outstanding – 1st overall in the Private Clinics/Hospitals category.
+        </p>
+      </div>
+      
+      <div class="award-card reveal">
+        <div class="row g-4 align-items-center">
+          <div class="col-lg-8">
+            <img src="PMR1.jpg" alt="Wilies Hospital team receiving the PMR Africa Diamond Arrow 2025 award" class="award-img-main">
+          </div>
+          <div class="col-lg-4">
+            <div class="d-flex flex-column gap-4 h-100">
+              <img src="PMR3.jpg" alt="PMR Africa Diamond Arrow 2025 Certificate" class="award-img-side">
+              <img src="PMR2.jpg" alt="Wilies Hospital team celebrating the award" class="award-img-side">
+            </div>
+          </div>
+        </div>
+        <div class="row mt-5">
+          <div class="col-lg-10 mx-auto text-center">
+            <p class="award-text mb-0">
+              <i class="bi bi-award-fill me-2" style="color:var(--gold);"></i>
+              Rated by a random, national sample of 110 respondents comprising of CEO's, MD's, business owners, company directors and managers and senior government officials based in Lesotho.
+            </p>
           </div>
         </div>
       </div>
@@ -899,10 +925,10 @@
         <p class="section-text mx-auto" style="max-width:650px">Take a look at our facilities and the environment we have created for our patients.</p>
       </div>
       <div class="gallery-grid reveal">
-        <div class="gallery-item"><img src="2.PNG" alt="Wilies Hospital Building"></div>
-        <div class="gallery-item"><img src="1.PNG" alt="Wilies Hospital Environment"></div>
-        <div class="gallery-item"><img src="2.PNG" alt="Wilies Hospital Facility"></div>
-        <div class="gallery-item"><img src="1.PNG" alt="Wilies Hospital Care"></div>
+        <div class="gallery-item"><img src="2.JPEG" alt="Wilies Hospital Building"></div>
+        <div class="gallery-item"><img src="1.JPEG" alt="Wilies Hospital Environment"></div>
+        <div class="gallery-item"><img src="2.JPEG" alt="Wilies Hospital Facility"></div>
+        <div class="gallery-item"><img src="1.JPEG" alt="Wilies Hospital Care"></div>
       </div>
     </div>
   </section>
@@ -1101,9 +1127,8 @@
           </div>
 
           <div class="socials">
-            <a class="social" href="https://www.facebook.com/782034415196196" target="_blank" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
-            <a class="social" href="https://wa.me/26663782550" target="_blank" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
             <a class="social" href="mailto:hoedof@gmail.com" aria-label="Email"><i class="bi bi-envelope-fill"></i></a>
+            <a class="social" href="https://wa.me/26663782550" target="_blank" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
           </div>
         </div>
 
@@ -1143,6 +1168,7 @@
           <a class="footer-link" href="#services">Services</a>
           <a class="footer-link" href="#corporate">Corporate Health</a>
           <a class="footer-link" href="#gallery">Gallery</a>
+          <a class="footer-link" href="#recognition">Awards</a>
           <a class="footer-link" href="#faqs">FAQs</a>
           <a class="footer-link" href="#contact">Contact</a>
         </div>
