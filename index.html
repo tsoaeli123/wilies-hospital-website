@@ -1782,6 +1782,667 @@
       }
     }
 
+  
+    /* =========================================================
+       MOBILE-FIRST RESPONSIVENESS PASS
+       Desktop design preserved; this layer only fixes smaller screens.
+       ========================================================= */
+
+    @media (max-width: 991.98px){
+      html{scroll-padding-top:96px}
+      body{overflow-x:hidden}
+      .container{max-width:100%}
+
+      .navbar .container{padding-left:16px;padding-right:16px}
+      .navbar-collapse{
+        margin-top:10px;
+        padding:12px;
+        border-radius:18px;
+        background:#fff;
+        border:1px solid rgba(7,29,54,.08);
+        box-shadow:0 18px 45px rgba(7,29,54,.11);
+        max-height:calc(100svh - 150px);
+        overflow-y:auto;
+      }
+      .navbar-nav{align-items:stretch!important}
+      .nav-link{
+        padding:12px 14px!important;
+        border-radius:12px;
+      }
+      .nav-link:after{display:none}
+      .nav-link:hover,.nav-link.active{background:#f3fbfa}
+      .navbar .nav-cta{
+        width:100%;
+        justify-content:center;
+        margin-top:6px;
+      }
+
+      .hero{
+        min-height:calc(100svh - 120px);
+        max-height:none;
+      }
+      .hero-content{
+        width:100%;
+      }
+
+      .services-head{
+        align-items:flex-start;
+      }
+
+      .recognition-shell,
+      .real-wilies-wrap,
+      .contact-grid{
+        grid-template-columns:1fr!important;
+      }
+
+      .footer-bottom{
+        align-items:flex-start;
+      }
+    }
+
+    @media (max-width: 767.98px){
+      body{
+        padding-bottom:84px;
+        overflow-x:hidden;
+      }
+
+      .container{
+        padding-left:16px!important;
+        padding-right:16px!important;
+      }
+
+      /* Compact, readable header */
+      .emergency-banner{
+        min-height:auto;
+        padding:7px 10px;
+        font-size:.67rem;
+        line-height:1.3;
+      }
+      .emergency-banner i{margin-right:5px}
+
+      .topbar{
+        padding:7px 0;
+      }
+      .topbar .container{
+        justify-content:center!important;
+        gap:6px!important;
+      }
+      .topbar-item{
+        margin:0 4px!important;
+        font-size:.65rem!important;
+        gap:5px;
+      }
+      .topbar-item.optional{display:none!important}
+
+      .navbar{
+        padding:7px 0!important;
+      }
+      .brand{
+        gap:9px;
+        min-width:0;
+      }
+      .brand-logo{
+        height:42px!important;
+        max-width:48px;
+        object-fit:contain;
+        border-radius:10px!important;
+      }
+      .brand-text{min-width:0}
+      .brand-name{
+        font-size:.9rem!important;
+        line-height:1.05;
+        white-space:nowrap;
+      }
+      .brand-sub{
+        font-size:.48rem!important;
+        letter-spacing:.1em!important;
+        white-space:nowrap;
+      }
+      .navbar-toggler{
+        padding:4px 6px;
+      }
+
+      /* Hero fills the phone cleanly without swallowing the CTA */
+      .hero{
+        min-height:calc(100svh - 106px)!important;
+        max-height:none!important;
+        align-items:flex-end!important;
+      }
+      .hero-media img{
+        object-position:center center!important;
+      }
+      .hero-overlay{
+        background:
+          linear-gradient(180deg,
+            rgba(4,20,38,.16) 0%,
+            rgba(4,20,38,.34) 24%,
+            rgba(4,20,38,.80) 58%,
+            rgba(4,20,38,.98) 100%)!important;
+      }
+      .hero-content{
+        padding:92px 16px 70px!important;
+      }
+      .eyebrow{
+        max-width:100%;
+        padding:7px 10px!important;
+        font-size:.56rem!important;
+        line-height:1.25;
+        white-space:normal;
+      }
+      .hero h1{
+        font-size:clamp(2.18rem,11vw,3.1rem)!important;
+        line-height:.98!important;
+        letter-spacing:-.05em!important;
+        margin:16px 0 14px!important;
+        max-width:100%!important;
+      }
+      .hero-lead{
+        max-width:100%!important;
+        font-size:.84rem!important;
+        line-height:1.65!important;
+        margin-bottom:0!important;
+      }
+      .hero-actions{
+        display:grid!important;
+        grid-template-columns:1fr!important;
+        gap:9px!important;
+        width:100%!important;
+        margin-top:20px!important;
+      }
+      .hero-actions a{
+        width:100%!important;
+        min-height:48px!important;
+        justify-content:center!important;
+        padding:12px 16px!important;
+        font-size:.8rem!important;
+      }
+      .hero-award-chip{
+        width:100%!important;
+        margin-top:10px!important;
+        padding:9px 10px!important;
+        border-radius:15px!important;
+      }
+      .hero-award-icon{
+        width:36px!important;
+        height:36px!important;
+        border-radius:11px!important;
+      }
+      .hero-award-chip small{font-size:.48rem!important}
+      .hero-award-chip strong{font-size:.65rem!important}
+      .hero-award-arrow{margin-left:auto!important}
+
+      /* Trust cards: no squeezed text */
+      .trust-strip{
+        margin-top:-18px!important;
+      }
+      .trust-card{
+        display:grid!important;
+        grid-template-columns:1fr 1fr!important;
+        gap:0!important;
+        padding:6px!important;
+        border-radius:18px!important;
+      }
+      .trust-item{
+        min-height:90px!important;
+        padding:12px 9px!important;
+        gap:7px!important;
+        border-right:0!important;
+        border-bottom:1px solid var(--line)!important;
+        align-items:flex-start!important;
+      }
+      .trust-item:nth-child(1),
+      .trust-item:nth-child(3){
+        border-right:1px solid var(--line)!important;
+      }
+      .trust-item:nth-child(3),
+      .trust-item:nth-child(4){
+        border-bottom:0!important;
+      }
+      .trust-item i{
+        width:33px!important;
+        height:33px!important;
+        font-size:.9rem!important;
+        border-radius:10px!important;
+      }
+      .trust-item strong{
+        font-size:.68rem!important;
+        line-height:1.25!important;
+      }
+      .trust-item span{
+        font-size:.56rem!important;
+        line-height:1.35!important;
+        word-break:break-word;
+      }
+
+      /* Section rhythm */
+      .section-pad{
+        padding:64px 0!important;
+      }
+      .section-kicker{
+        font-size:.58rem!important;
+        padding:7px 10px!important;
+        margin-bottom:13px!important;
+      }
+      .section-title{
+        font-size:clamp(1.9rem,8.6vw,2.35rem)!important;
+        line-height:1.07!important;
+        letter-spacing:-.045em!important;
+        margin-bottom:14px!important;
+      }
+      .section-text{
+        font-size:.86rem!important;
+        line-height:1.7!important;
+      }
+
+      /* Proof strip */
+      .hospital-proof{
+        padding:22px 0 0!important;
+      }
+      .hospital-proof-grid{
+        grid-template-columns:1fr!important;
+        border-radius:16px!important;
+      }
+      .award-ribbon{
+        margin:0!important;
+        border-radius:16px 16px 0 0!important;
+      }
+      .proof-item{
+        min-height:auto!important;
+        padding:14px!important;
+        border-right:0!important;
+        border-bottom:1px solid var(--line)!important;
+      }
+      .proof-item:last-child{border-bottom:0!important}
+
+      /* About image: no overlay collision */
+      .about-visual{
+        margin-bottom:28px!important;
+        padding-right:0!important;
+      }
+      .about-main-img{
+        height:300px!important;
+        border-radius:22px!important;
+      }
+      .image-accent{
+        position:relative!important;
+        right:auto!important;
+        bottom:auto!important;
+        width:100%!important;
+        margin-top:10px!important;
+        padding:14px 16px!important;
+        border-radius:16px!important;
+      }
+      .image-accent .big{font-size:1.45rem!important}
+      .image-accent p{font-size:.72rem!important}
+      .about-points{
+        grid-template-columns:1fr!important;
+        gap:10px!important;
+      }
+      .point{
+        min-height:auto!important;
+        padding:15px!important;
+      }
+
+      /* Patient focus */
+      .patient-focus{
+        padding:58px 0!important;
+      }
+      .patient-focus h2{
+        font-size:2.05rem!important;
+        line-height:1.05!important;
+      }
+      .patient-focus p{
+        font-size:.86rem!important;
+        line-height:1.7!important;
+      }
+
+      /* Services */
+      .services-head{
+        display:block!important;
+        margin-bottom:26px!important;
+      }
+      .service-grid{
+        grid-template-columns:1fr!important;
+        gap:12px!important;
+      }
+      .service-card{
+        min-height:0!important;
+        padding:20px!important;
+        border-radius:18px!important;
+      }
+      .service-icon{
+        width:50px!important;
+        height:50px!important;
+        margin-bottom:18px!important;
+      }
+      .service-card h3{
+        font-size:1.05rem!important;
+        margin-bottom:9px!important;
+      }
+      .service-card p{
+        font-size:.79rem!important;
+        line-height:1.68!important;
+      }
+      .service-link{
+        padding-top:16px!important;
+        font-size:.67rem!important;
+      }
+
+      /* Recognition section */
+      .recognition-section{
+        padding-top:66px!important;
+      }
+      .recognition-year{
+        margin-bottom:14px!important;
+      }
+      .recognition-year span{
+        font-size:3.2rem!important;
+      }
+      .recognition-year small{
+        font-size:.6rem!important;
+      }
+      .recognition-facts{
+        gap:8px!important;
+        margin-top:22px!important;
+      }
+      .recognition-fact{
+        padding:12px!important;
+      }
+      .recognition-gallery{
+        display:grid!important;
+        grid-template-columns:1fr!important;
+        grid-template-rows:none!important;
+        gap:10px!important;
+      }
+      .award-photo,
+      .award-photo-main,
+      .award-photo-team,
+      .award-photo-certificate{
+        grid-column:auto!important;
+        grid-row:auto!important;
+        height:auto!important;
+        min-height:0!important;
+        border-radius:18px!important;
+      }
+      .award-photo-main img,
+      .award-photo-team img{
+        aspect-ratio:4/3;
+        object-fit:cover!important;
+      }
+      .award-photo-certificate{
+        background:#081426!important;
+      }
+      .award-photo-certificate img{
+        width:100%!important;
+        height:auto!important;
+        aspect-ratio:auto!important;
+        object-fit:contain!important;
+        background:#081426!important;
+      }
+      .award-photo figcaption{
+        left:14px!important;
+        right:14px!important;
+        bottom:12px!important;
+      }
+
+      /* Real Wilies block */
+      .real-wilies-wrap{
+        grid-template-columns:1fr!important;
+        gap:26px!important;
+      }
+      .real-contact-mini{
+        grid-template-columns:1fr!important;
+        gap:8px!important;
+      }
+      .real-wilies-photo{
+        min-height:0!important;
+        height:auto!important;
+        border-radius:20px!important;
+      }
+      .real-wilies-photo img{
+        width:100%!important;
+        height:auto!important;
+        min-height:0!important;
+        aspect-ratio:4/3;
+        object-fit:cover!important;
+      }
+
+      /* Existing gallery */
+      .gallery-grid{
+        grid-template-columns:1fr!important;
+        gap:10px!important;
+      }
+      .gallery-item,
+      .gallery-item:nth-child(1),
+      .gallery-item:nth-child(2),
+      .gallery-item:nth-child(3),
+      .gallery-item:nth-child(4){
+        grid-column:auto!important;
+        grid-row:auto!important;
+        height:auto!important;
+        min-height:0!important;
+        border-radius:18px!important;
+      }
+      .gallery-item img{
+        width:100%!important;
+        height:auto!important;
+        aspect-ratio:4/3;
+        object-fit:cover!important;
+      }
+
+      /* Corporate */
+      .corporate-card{
+        padding:18px!important;
+        border-radius:20px!important;
+      }
+      .client-grid{
+        grid-template-columns:1fr 1fr!important;
+        gap:8px!important;
+      }
+      .client-tag{
+        padding:10px 8px!important;
+        font-size:.64rem!important;
+        line-height:1.35!important;
+      }
+      .screening-box{
+        padding:18px!important;
+        border-radius:18px!important;
+      }
+      .screening-list li{
+        font-size:.82rem!important;
+      }
+
+      /* Consultation */
+      .consult-card{
+        border-radius:20px!important;
+      }
+      .consult-left,
+      .consult-right{
+        padding:26px 18px!important;
+      }
+      .consult-list{
+        margin-top:24px!important;
+      }
+      .consult-list li{
+        font-size:.82rem!important;
+        margin-bottom:14px!important;
+      }
+      .form-label{font-size:.76rem!important}
+      .form-control,
+      .form-select{
+        min-height:50px!important;
+        padding:12px 13px!important;
+        font-size:.86rem!important;
+      }
+      textarea.form-control{min-height:110px!important}
+
+      /* FAQ */
+      .faq-wrap{margin-top:28px!important}
+      .accordion-item{
+        border-radius:14px!important;
+        margin-bottom:10px!important;
+      }
+      .accordion-button{
+        padding:17px 16px!important;
+        font-size:.83rem!important;
+        line-height:1.45!important;
+      }
+      .accordion-body{
+        padding:0 16px 17px!important;
+        font-size:.8rem!important;
+        line-height:1.65!important;
+      }
+
+      /* Contact */
+      .contact-grid{
+        grid-template-columns:1fr!important;
+        gap:16px!important;
+      }
+      .contact-card{
+        padding:18px!important;
+        border-radius:20px!important;
+      }
+      .contact-row{
+        gap:12px!important;
+        padding:14px 0!important;
+      }
+      .contact-icon{
+        width:42px!important;
+        height:42px!important;
+        border-radius:13px!important;
+      }
+      .contact-row strong{font-size:.8rem!important}
+      .contact-row a,
+      .contact-row span{
+        font-size:.76rem!important;
+        line-height:1.5!important;
+        overflow-wrap:anywhere;
+      }
+      .map-card{
+        min-height:300px!important;
+        border-radius:20px!important;
+      }
+      .map-content{padding:22px!important}
+      .map-pin{
+        width:62px!important;
+        height:62px!important;
+        border-radius:18px!important;
+        font-size:1.55rem!important;
+      }
+
+      /* Footer should not squeeze into two tiny columns */
+      footer{
+        padding:58px 0 22px!important;
+      }
+      footer .row > [class*="col-"]{
+        width:100%!important;
+        max-width:100%!important;
+        flex:0 0 100%!important;
+      }
+      .footer-brand{align-items:center!important}
+      .footer-logo{height:52px!important}
+      .footer-title{margin-bottom:15px!important}
+      .footer-link{
+        margin-bottom:10px!important;
+        font-size:.78rem!important;
+      }
+      .footer-bottom{
+        display:block!important;
+        text-align:center!important;
+        margin-top:32px!important;
+        padding-top:20px!important;
+        line-height:1.6!important;
+      }
+
+      /* Floating actions */
+      .wa-float{
+        width:50px!important;
+        height:50px!important;
+        right:14px!important;
+        bottom:92px!important;
+        font-size:1.25rem!important;
+        border-width:3px!important;
+      }
+      .wa-float-label{display:none!important}
+
+      .mobile-bar{
+        left:8px!important;
+        right:8px!important;
+        bottom:max(8px,env(safe-area-inset-bottom))!important;
+        padding:7px!important;
+        border-radius:17px!important;
+      }
+      .mobile-bar a{
+        min-width:0;
+        padding:6px 2px!important;
+        font-size:.55rem!important;
+        line-height:1.2!important;
+      }
+      .mobile-bar i{
+        font-size:1rem!important;
+        margin-bottom:3px!important;
+      }
+    }
+
+    @media (max-width: 479.98px){
+      .topbar-item{font-size:.61rem!important}
+
+      .hero{
+        min-height:calc(100svh - 100px)!important;
+      }
+      .hero-content{
+        padding:82px 14px 64px!important;
+      }
+      .hero h1{
+        font-size:clamp(2rem,11vw,2.65rem)!important;
+      }
+      .hero-lead{
+        font-size:.8rem!important;
+      }
+
+      .trust-card{
+        grid-template-columns:1fr!important;
+      }
+      .trust-item,
+      .trust-item:nth-child(1),
+      .trust-item:nth-child(3){
+        border-right:0!important;
+        border-bottom:1px solid var(--line)!important;
+      }
+      .trust-item:last-child{border-bottom:0!important}
+      .trust-item{
+        min-height:auto!important;
+        flex-direction:row!important;
+      }
+
+      .client-grid{
+        grid-template-columns:1fr!important;
+      }
+
+      .award-photo-main img,
+      .award-photo-team img{
+        aspect-ratio:1/1;
+      }
+
+      .real-wilies-photo img,
+      .gallery-item img{
+        aspect-ratio:1/1;
+      }
+
+      .mobile-bar a{
+        font-size:.5rem!important;
+      }
+    }
+
+    @media (max-width: 359.98px){
+      .brand-name{font-size:.8rem!important}
+      .brand-sub{font-size:.42rem!important}
+      .hero h1{font-size:1.92rem!important}
+      .section-title{font-size:1.8rem!important}
+      .hero-award-chip strong{font-size:.6rem!important}
+      .mobile-bar a{font-size:.47rem!important}
+    }
+
   </style>
 </head>
 
