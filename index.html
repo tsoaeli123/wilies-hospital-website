@@ -383,23 +383,24 @@
     .service-link:hover { color: var(--teal); gap: 12px; }
 
     /* ---------- GALLERY ---------- */
-    .gallery-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; }
+    .gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 20px; }
     .gallery-item { 
       border-radius: 20px; 
       overflow: hidden; 
-      height: 250px; 
+      height: 280px; 
       position: relative;
       box-shadow: var(--shadow-sm);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .gallery-item:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-md);
     }
     .gallery-item img { 
       width: 100%; height: 100%; object-fit: cover; 
       transition: transform 0.5s ease; 
     }
-    .gallery-item:hover img { transform: scale(1.1); }
-    .gallery-item:nth-child(1) { grid-column: span 2; grid-row: span 2; height: 100%; min-height: 515px; }
-    .gallery-item:nth-child(2) { grid-column: span 2; }
-    .gallery-item:nth-child(3) { grid-column: span 1; }
-    .gallery-item:nth-child(4) { grid-column: span 1; }
+    .gallery-item:hover img { transform: scale(1.08); }
 
     /* ---------- CORPORATE SECTION ---------- */
     .corporate-section { background: var(--navy); color: #fff; }
@@ -605,10 +606,6 @@
       .contact-grid { grid-template-columns: 1fr; }
       .map-card { min-height: 400px; }
       .gallery-grid { grid-template-columns: repeat(2, 1fr); }
-      .gallery-item:nth-child(1) { grid-column: span 2; grid-row: span 1; min-height: 250px; }
-      .gallery-item:nth-child(2) { grid-column: span 2; }
-      .gallery-item:nth-child(3) { grid-column: span 1; }
-      .gallery-item:nth-child(4) { grid-column: span 1; }
       .award-img-main { height: 350px; }
     }
 
@@ -655,7 +652,6 @@
       .corporate-card { padding: 25px; }
       .screening-box { padding: 25px; }
       .gallery-grid { grid-template-columns: 1fr; }
-      .gallery-item { grid-column: span 1 !important; height: 220px; }
       .award-img-main { height: 280px; }
       .award-img-side { height: 180px; }
       .award-card { padding: 25px; }
@@ -927,8 +923,9 @@
       <div class="gallery-grid reveal">
         <div class="gallery-item"><img src="2.PNG" alt="Wilies Hospital Building"></div>
         <div class="gallery-item"><img src="1.PNG" alt="Wilies Hospital Environment"></div>
-        <div class="gallery-item"><img src="2.PNG" alt="Wilies Hospital Facility"></div>
-        <div class="gallery-item"><img src="1.PNG" alt="Wilies Hospital Care"></div>
+        <div class="gallery-item"><img src="p.JPEG" alt="Wilies Hospital Patient Room with TV"></div>
+        <div class="gallery-item"><img src="p2.JPEG" alt="Wilies Hospital Ward Bed"></div>
+        <div class="gallery-item"><img src="p3.JPEG" alt="Wilies Hospital X-Ray Room"></div>
       </div>
     </div>
   </section>
